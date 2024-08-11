@@ -1,0 +1,35 @@
+<table>
+    <tr>
+        <td>Value 1 :</td><td><input id="num1" type="number"></td>
+    </tr>
+    <tr>
+        <td>Value 2 :</td>
+        <td><input id="num2" type="number"></td>
+    </tr>
+</table>
+
+<button onclick="add()">Add</button>
+<p id="result">Result : </p>
+<script>
+  function add(){
+    var num1 = Number(document.getElementById("num1").value);
+    var num2 = Number(document.getElementById("num2").value);
+    var total = num1 + num2;
+    document.getElementById("result").textContent = "Result : " + total;
+    console.log(total);
+}
+
+</script>
+
+<style>
+    button{
+        background-color: lightblue;
+        padding:5px;
+        border-radius: 30px;
+        width: 80px;
+    }
+    button:hover{
+        transform: scale(0.8,0.8);
+        cursor: pointer;
+    }
+</style>

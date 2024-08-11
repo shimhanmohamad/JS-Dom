@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="icon" href="OIP (1).jpg">
+</head>
+<body>
+    <center>
+        <center><h1>WelCome to Daily TODO list</h1></center>
+    
+    <table>
+        <tr><td>Daily Tasks : </td>
+            <td><input id="word" placeholder="Enter the Daily tasks"></td>
+            <td><button onclick="add()">ADD</button></td>
+        </tr>
+    </table>
+    
+    
+    <ul id="list-container" type="none">
+        <li>Hello
+            <button onclick="deleteitem(event)">Delete</button>
+        </li>
+    </ul>
+    
+    <script>
+        var ul=document.getElementById("list-container")
+        var word = document.getElementById("word")
+        function add(){
+            var listitem = document.createElement("li")
+            listitem.innerHTML=word.value + "<button onclick='deleteitem(event)'>Delete</button>"
+            ul.append(listitem)
+        }
+    
+        function deleteitem(event){
+            event.target.parentElement.remove()
+        }
+    </script>
+    <style>
+        button{
+            background-color:lightblue;
+            border-radius: 20px;
+            height: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(0.8,0.8);
+            color: white;
+            background-color:darkblue;
+        }
+        h1{
+            color: darkblue;
+            font-style: italic;
+        }
+
+        table {
+            border: 2px solid black; /* Border around the entire page */
+            padding: 20px; /* Add padding for better spacing */
+            border-radius: 15px;
+            background-color: paleturquoise;
+        }
+        body{
+            background-image: url(OIP.jpg);
+            background-size: 600px 900px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 200px;
+        }
+     </style> 
+    </center>
+</body>
+</html>

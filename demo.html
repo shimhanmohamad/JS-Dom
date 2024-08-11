@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student form</title>
+</head>
+<body>
+    <center>
+        <center><h1>STUDENT FORM</h1></center>
+   <table border="1" id="one">
+    <tr>
+        <td><b>Name</b></td>
+        <td><input id="name" type="text"></td>
+    </tr>
+    <tr>
+        <td><b>Age</b></td>
+        <td><input id="age" type="number"></td>
+    </tr>
+    <tr>
+        <td><b>Gender</b></td>
+        <td>
+            <input id="male" type="radio" name="gender">
+            <label for="male">Male</label>
+            <input id="female" type="radio" name="gender">
+            <label for="female">Female</label>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Course</b></td>
+        <td>
+            <select id="course">
+                <option>Select a course</option>
+                <option>Python</option>
+                <option>C++</option>
+                <option>Scala</option>
+                <option>Full stack development</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Email</b></td>
+        <td><input id="email" type="email"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button style="width: 220px;" id="btn" onclick="addEntry()">Save</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button style="width: 220px;" onclick="clearFields()">Clear</button>
+        </td>
+    </tr>
+   </table>
+   </center>
+   <!-- CSS style -->
+   <style>
+    #one {
+        border: 1px solid black;
+        margin: 5px;
+        padding: 10px;
+    }
+    button {
+        background-color: aqua;
+        border-radius: 20px;
+    }
+    button:hover {
+        cursor: pointer;
+        transform: scale(0.8, 0.8);
+    }
+    </style>
+   <center>
+    <table border="1" id="two">
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Age</b></td>
+            <td><b>Course</b></td>
+            <td><b>Gender</b></td>
+            <td><b>Email</b></td>
+            <td><b>Action</b></td>
+        </tr>
+   </table>
+   </center>
+
+   <script>
+       function addEntry() {
+           var name = document.getElementById("name").value;
+           var age = document.getElementById("age").value;
+           var gender = document.querySelector('input[name="gender"]:checked');
+           var course = document.getElementById("course").value;
+           var email = document.getElementById("email").value;
+
+           // Check if all fields are filled
+           if (name && age && gender && course && email) {
+               var table = document.getElementById("two");
+               var row = table.insertRow(-1);
+               var cell1 = row.insertCell(0);
+               var cell2 = row.insertCell(1);
+               var cell3 = row.insertCell(2);
+               var cell4 = row.insertCell(3);
+               var cell5 = row.insertCell(4);
+               var cell6 = row.insertCell(5);
+
+               cell1.innerHTML = name;
+               cell2.innerHTML = age;
+               cell3.innerHTML = course;
+               cell4.innerHTML = gender.value;
+               cell5.innerHTML = email;
+               cell6.innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
+
+               clearFields();
+           } else {
+               alert("Please fill in all fields.");
+           }
+       }
+
+       function clearFields() {
+           document.getElementById("name").value = "";
+           document.getElementById("age").value = "";
+           document.getElementById("male").checked = false;
+           document.getElementById("female").checked = false;
+           document.getElementById("course").selectedIndex = 0;
+           document.getElementById("email").value = "";
+       }
+
+       function deleteRow(button) {
+           var row = button.parentNode.parentNode;
+           row.parentNode.removeChild(row);
+       }
+   </script>
+    </center>
+</body>
+</html>

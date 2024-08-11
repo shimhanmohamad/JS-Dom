@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student form</title>
+    <style>
+        #one{
+            border: 1px solid black;
+            margin: 5px;
+            padding: 10px;
+        }
+        button{
+            background-color: aqua;
+            border-radius: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(0.8,0.8);
+        }
+    </style>
+</head>
+<body>
+   <center><h1>STUDENT FORM</h1>
+   <table border="1" id="one">
+    <tr>
+        <td><b>Name</b></td>
+        <td><input id="name"  type="text"></td>
+    </tr>
+    <tr>
+        <td><b>Age</b></td>
+        <td><input id="age" type="number"></td><br>
+    </tr>
+    <tr>
+        <td><b>Gender</b></td>
+        <td><input id="male" type="radio" name="gender">Male
+        <input id="female" type="radio" name="gender">Female</td>
+    </tr>
+    <tr>
+        <td><b>Course</b></td>
+        <td><select id="course">
+            <option disabled selected >Select a course</option>
+            <option>Python</option>
+            <option>C++</option>
+            <option>Scala</option>
+            <option>Full stack development</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><b>Email</b></td>
+        <td><input id="email" type="email"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><button style="width: 220px;" id="btn" onclick="addentry()">Save</button></td>
+    </tr>
+   </table>
+   </center> 
+   
+   <center>
+    <table border="1" id="two">
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Age</b></td>
+            <td><b>Course</b></td>
+            <td><b>Gender</b></td>
+            <td><b>Email</b></td>
+            <td><b>Action</b></td>
+        </tr>
+    </table>
+   </center>
+
+    <script>
+        function addentry() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var course = document.getElementById("course").value;
+            var email = document.getElementById("email").value;
+            var table = document.getElementById("two");
+
+            // Check if any field is empty
+            if (name === "" || age === "" || gender === null || course === "Select a course" || email === "") {
+                alert("Please fill out all fields.");
+                return; // Exit function if any field is empty
+            }
+
+            // All fields are filled, proceed to create table row
+            var rowitem = document.createElement("tr");
+            rowitem.innerHTML = "<td>" + name + "</td><td>" + age + "</td><td>" + course + "</td><td>" + gender + "</td><td>" + email + "</td><td><button onclick='deleteitem(event)'>Delete</button></td>";
+            table.appendChild(rowitem);
+            
+            // Display alert message
+            alert("Student added successfully!");
+        }
+
+        function deleteitem(event) {
+            event.target.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

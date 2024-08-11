@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKSKY</title>
+    <link rel="stylesheet" href="booksky.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,400;0,700;0,900;1,100;1,200;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Booksky</h1>
+    </div>
+
+    <div class="contentdetail">
+        <div class="book-container">
+            <h2>Rich Dad Poor Dad</h2>
+            <h4>Robert</h4>
+            <p>
+                "Rich Dad Poor Dad" by Robert Kiyosaki contrasts the financial teachings of the
+                author's biological father (the "poor dad") with those of his best friend's
+                father (the "rich dad"). Through anecdotal storytelling, Kiyosaki imparts
+                fundamental lessons about wealth accumulation, financial independence, and the
+                mindset needed to achieve prosperity. The book emphasizes the importance of
+                financial education, asset ownership, and embracing risk as pathways to
+                financial success.
+            </p>
+            <br>
+            <button class="one" onclick="deletebook(event)">Delete</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay"></div>
+    <div class="popup-box">
+        <h2>Add Book</h2>
+        <form>
+            <input type="text" placeholder="Book Title" id="book-title">
+            <input type="text" placeholder="Book Author" id="book-author">
+            <textarea placeholder="Short Description" cols="30" rows="3" id="book-description"></textarea><br>
+            <button id="add-book">ADD</button>
+            <button id="cancel-popup">CANCEL</button>
+        </form>
+    </div>
+
+    <button class="add-button" id="plus" onclick="adding()">+</button>
+    <script src="booksky.js"></script>
+</body>
+
+</html>

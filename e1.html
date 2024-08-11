@@ -1,0 +1,31 @@
+<!-- <h1 id="title">Hello world</h1>
+
+<script>
+    var x = document.getElementById("title")
+    console.log(x.textContent)
+    x.textContent = "By World"
+
+</script> -->
+
+<h1 id="h1">Hello world</h1>
+<button onclick="change()">Change</button>
+<style>
+    button{
+        background-color: lightblue;
+        padding:5px;
+        border-radius: 30px;
+    }
+    button:hover{
+        transform: scale(0.8,0.8);
+        cursor: pointer;
+    }
+</style>
+<script>
+    var h1 = document.getElementById("h1")
+    console.log(h1.textContent)
+
+    function change(){
+        h1.textContent = "By World"
+    }
+
+</script>

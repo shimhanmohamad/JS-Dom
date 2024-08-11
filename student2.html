@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form 2.0</title>
+</head>
+
+<body>
+    <center>
+        <h1>STUDENT FORM</h1>
+    </center>
+    <div class="container">
+        <table border="1" id="one">
+            <tr>
+                <td><b>Name : </b></td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td><b>Age : </b></td>
+                <td><input type="number" id="age"></td>
+            </tr>
+            <tr>
+                <td><b>Gender : </b></td>
+                <td><input type="radio" value="gender" name="one" id="male">Male <input type="radio" value="gender"
+                        name="one" id="female">Femal</td>
+            </tr>
+            <tr>
+                <td>Course</td>
+                <td id="course">
+                    <select>
+                        <option disabled selected>Select a course</option>
+                        <option>Python</option>
+                        <option>C++</option>
+                        <option>Scala</option>
+                        <option>Full stack Development</option>
+                        <option>RAD</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Email : </b></td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button style="width: 245px;border-radius: 25px; " id="btn"
+                        onclick="addentry()">AddEntry</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <style>
+        .container {
+            padding: 3px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+        }
+
+        button {
+            background-color: palevioletred;
+        }
+
+        button:hover {
+            background-color: red;
+            cursor: pointer;
+            transform: scale(0.9, 0.9);
+        }
+
+        .Tcontainer {
+            display: flex;
+            padding: 3px;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+         <div class="Tcontainer">
+            <table border="1" id="two">
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Gender</td>
+                    <td>Course</td>
+                    <td>Email</td>
+                    <td>Action</td>
+                </tr>
+            </table>
+        </div>
+    
+    <script>
+        function addentry() {
+           
+            var nameValue = document.getElementById("name").value;
+            var ageValue = document.getElementById("age").value;
+            var genderValue = document.querySelector('input[name="one"]:checked');
+            var courseValue = document.querySelector('#course select').value;   //when select the table id 
+            var emailValue = document.getElementById("email").value;
+            var table = document.getElementById("two");
+
+            // Check if any field is empty
+            if (nameValue === "" || ageValue === "" || genderValue === null || courseValue === "Select a course" || emailValue === "") {
+                alert("Please fill out all fields.");
+                return; // Exit function if any field is empty
+            }
+
+            var newRow = document.createElement("tr");
+            newRow.innerHTML = "<td>" + nameValue + "</td><td>" + ageValue + "</td><td>" + genderValue.value + "</td><td>" + courseValue + "</td><td>" + emailValue + "</td>" + "<td>" +"<button onclick='Remove(event)'>Delete</button>"+ "</td>";
+            table.appendChild(newRow);
+
+            alert("Student added successfully");
+        }
+
+        function Remove(event){
+             event.target.parentElement.parentElement.remove()    
+        }
+
+
+    </script>
+</body>
+
+</html>

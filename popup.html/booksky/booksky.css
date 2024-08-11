@@ -1,0 +1,185 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+
+body{
+    .lato-thin {
+        font-family: "Lato", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      
+      .lato-light {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .lato-regular {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .lato-bold {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      .lato-black {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+      
+      .lato-thin-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+      }
+      
+      .lato-light-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+      
+      .lato-regular-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+      
+      .lato-bold-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+      
+      .lato-black-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+      }      
+
+    #heading{
+        background-color: #FD6569;
+        padding: 10px;
+        color: black;
+    }
+    .contentdetail{
+      padding: 10px;
+    }
+    .book-container{
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        color: white;
+        padding: 30px;
+        margin:20px;
+        border-radius: 20px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .book-container h2{
+        color: #FD6569;
+    }
+    
+    .one{
+        background-color: #FD6569;
+        color: black;
+        width: 80px;
+        height: 30px;
+        border-radius: 15px;
+        border: none;
+    }
+    .one:hover{
+        cursor: pointer;
+        transform: scale(0.8);
+    }
+
+    .add-button{
+        background-color: #FD6569;
+        color: black;
+        border-radius: 100%;
+        padding: 30px;
+        font-size: 40px;
+        border: none;
+        position: fixed;
+        bottom: 30;
+        right: 30px;
+        display: block;
+    }
+    .add-button:hover{
+        cursor: pointer;
+        transform: scale(0.8);
+    }
+
+    .popup-overlay{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        display: none;
+    }
+    .popup-box {
+        background-color: #FD6569;
+        color: black;
+        border-radius: 10px;
+        width: 400px;
+        height: 250px;
+        padding: 30px;
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        z-index: 2;
+        display: none;
+    }
+
+    .popup-box input{
+        background: transparent;
+        border: none;
+        width: 100%;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        border-bottom: solid black 2px;
+    }
+    .popup-box textarea{
+        background: transparent;
+        width: 100%;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        border: solid black 2px;
+        border-radius: 10px;
+    }
+    .popup-box textarea::placeholder{
+        color: black;
+    }
+    .popup-box input::placeholder{
+        color: black;
+    }
+
+    .popup-box button{
+        background-color:black;
+        color: white;
+        width: 80px;
+        height: 30px;
+        border-radius: 15px;
+        border: solid black 2px;
+    }
+
+    .popup-box button:hover{
+        cursor: pointer;
+        transform: scale(0.8);
+    }
+    
+    
+}

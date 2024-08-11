@@ -1,0 +1,25 @@
+<h1 onclick="deleteitem(event)">One</h1>
+<h1 onclick="deleteitem(event)">two</h1>
+<h1 onclick="deleteitem(event)">three</h1>
+<h1 onclick="deleteitem(event)">four</h1>
+<h1 onclick="deleteitem(event)">five</h1>
+<h1 onclick="deleteitem(event)">six</h1>
+<h1 onclick="deleteitem(event)">seven</h1>
+<h1 onclick="deleteitem(event)">Eight</h1>
+
+<style>
+    h1{ 
+        width: 50px;
+        color: red;
+    }
+
+    h1:hover{
+        cursor: pointer;
+        color: black;
+    }
+</style>
+<script>
+    function deleteitem(event){
+        event.target.remove()
+    }
+</script>

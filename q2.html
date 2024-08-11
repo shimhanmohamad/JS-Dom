@@ -1,0 +1,12 @@
+<button onclick="add()">ADD</button>
+<div id="result"></div>
+
+<script>
+    //select div
+    var div = document.getElementById("result")
+    function add(){
+        var list = document.createElement("h1")
+        list.textContent = "Hello"
+        div.append(list)
+    }
+</script>
